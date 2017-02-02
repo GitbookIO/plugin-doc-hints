@@ -6,13 +6,13 @@ var CLASSES = {
 };
 
 function makeIcon(name) {
-    return '<i class="octicon octicon-'+name+'" style=""></i>';
+    return '<i class="fa fa-'+name+'" style=""></i>';
 }
 var ICONS = {
     info: makeIcon('info'),
     tip: makeIcon('mortar-board'), // Diploma hat
-    danger: makeIcon('issue-opened'),
-    working: makeIcon('tools')
+    danger: makeIcon('exclamation'),
+    working: makeIcon('wrench')
 };
 
 module.exports = {
