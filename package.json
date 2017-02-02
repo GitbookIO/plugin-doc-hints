@@ -7,9 +7,9 @@
         "gitbook": ">2.x.x"
     },
     "license": "Apache 2.0",
-    "homepage": "https://github.com/GitbookIO/plugin-doc-hints",
+    "homepage": "https://github.com/GitbookIO/plugin-hints",
     "repository": {
         "type": "git",
-        "url": "https://github.com/GitbookIO/plugin-doc-hints.git"
+        "url": "https://github.com/GitbookIO/plugin-hints.git"
     }
 }
