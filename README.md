@@ -22,11 +22,14 @@ You can now provide hints in various ways using the `hint` tag.
 Important info: this note needs to be highlighted
 {% endhint %}
 ```
-The above example will produce a `div` with the appropriate style:
+The above example will produce a styled alert, with an icon:
 
 ``` html
-<div class="alert alert-info">
-Important info: this note needs to be highlighted
+<div class="alert alert-info hints-alert">
+  <div class="hints-icon"><i class="fa fa-info"></i></div>
+  <div class="hints-container">
+    <p>Important info: this note needs to be highlighted</p>
+  </div>
 </div>
 ```
 
@@ -36,3 +39,21 @@ Available styles are:
 - `tip`
 - `danger`
 - `working`
+
+### Configuration
+
+You can specify custom classes for the icons (or none) in your `book.json`:
+
+```json
+{
+    "plugins": ["hints"],
+    "pluginsConfig": {
+        "hints": {
+            "info": "fa fa-info-circle",
+            "tip": "fa fa-mortar-board",
+            "danger": "fa fa-exclamation-cicle",
+            "working": "fa fa-wrench"
+        }
+    }
+}
+```
