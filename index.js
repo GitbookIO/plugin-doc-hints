@@ -1,31 +1,51 @@
-var CLASSES = {
+var ALERT_STYLES = {
     info:'info',
     tip:'success',
     danger:'danger',
     working:'warning'
 };
 
-function makeIcon(name) {
-    return '<i class="fa fa-'+name+'" style=""></i>';
+/**
+ * @param {String} style
+ * @param {Object} pluginConfig
+ * @return {String} HTML for an alert icon
+ */
+function makeIcon(style, pluginConfig) {
+    var id = pluginConfig[style];
+    return '<div class="hints-icon"><i class="'+id+'"></i></div>';
 }
-var ICONS = {
-    info: makeIcon('info'),
-    tip: makeIcon('mortar-board'), // Diploma hat
-    danger: makeIcon('exclamation'),
-    working: makeIcon('wrench')
-};
+
+/**
+ * @param {String} html
+ * @return {String} HTML wrapped in a hint container
+ */
+function wrapInContainer(html) {
+    return '<div class="hints-container">'+html+'</div>';
+}
 
 module.exports = {
+    book: {
+        assets: './assets',
+        css: [
+            'plugin-hints.css'
+        ]
+    },
+
     blocks: {
         hint: {
             process: function (block) {
                 // Available styles: info, danger, tip, working
                 var style = block.kwargs.style || 'info';
+                var pluginConfig = this.config.get('pluginsConfig.hints');
 
-                return '<div class="alert alert-'+CLASSES[style]+'">'
-                    + ICONS[style]
-                    + block.body
-                    + '</div>';
+                return this
+                    .renderBlock('markdown', block.body)
+                    .then(function(renderedBody) {
+                        return '<div class="alert alert-'+ALERT_STYLES[style]+' hints-alert">'
+                            + makeIcon(style, pluginConfig)
+                            + wrapInContainer(renderedBody)
+                            + '</div>';
+                    });
             }
         }
     }

@@ -11,5 +11,29 @@
     "repository": {
         "type": "git",
         "url": "https://github.com/GitbookIO/plugin-hints.git"
+    },
+    "gitbook": {
+        "properties": {
+            "info": {
+                "type": "string",
+                "title": "CSS class for the 'info' icons",
+                "default": "fa fa-info-circle"
+            },
+            "tip": {
+                "type": "string",
+                "title": "CSS class for the 'tip' icons",
+                "default": "fa fa-mortar-board"
+            },
+            "danger": {
+                "type": "string",
+                "title": "CSS class for the 'danger' icons",
+                "default": "fa fa-exclamation-circle"
+            },
+            "working": {
+                "type": "string",
+                "title": "CSS class for the 'working' icons",
+                "default": "fa fa-wrench"
+            }
+        }
     }
 }
