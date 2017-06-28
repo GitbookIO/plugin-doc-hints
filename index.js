@@ -1,8 +1,10 @@
 var ALERT_STYLES = {
     info:'info',
     tip:'success',
+    success:'success',
     danger:'danger',
-    working:'warning'
+    working:'warning',
+    warning:'warning,
 };
 
 /**
