@@ -1,8 +1,8 @@
 {
     "name": "gitbook-plugin-hints",
-    "description": "Defines four types of styled hint blocks: info, danger, tip, working.",
+    "description": "Defines four types of styled hint blocks: info, danger, success, warning.",
     "main": "index.js",
-    "version": "1.0.2",
+    "version": "2.0.0",
     "engines": {
         "gitbook": ">2.x.x"
     },
@@ -14,25 +14,21 @@
     },
     "gitbook": {
         "properties": {
-            "info": {
-                "type": "string",
-                "title": "CSS class for the 'info' icons",
-                "default": "fa fa-info-circle"
-            },
-            "tip": {
-                "type": "string",
-                "title": "CSS class for the 'tip' icons",
-                "default": "fa fa-mortar-board"
-            },
             "danger": {
                 "type": "string",
-                "title": "CSS class for the 'danger' icons",
-                "default": "fa fa-exclamation-circle"
+                "title": "CSS class for the 'danger' icons"
             },
-            "working": {
+            "info": {
                 "type": "string",
-                "title": "CSS class for the 'working' icons",
-                "default": "fa fa-wrench"
+                "title": "CSS class for the 'info' icons"
+            },
+            "success": {
+                "type": "string",
+                "title": "CSS class for the 'success' icons"
+            },
+            "warning": {
+                "type": "string",
+                "title": "CSS class for the 'warning' icons"
             }
         }
     }

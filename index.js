@@ -1,8 +1,8 @@
 var ALERT_STYLES = {
-    info:'info',
-    tip:'success',
-    danger:'danger',
-    working:'warning'
+    danger: 'danger',
+    info: 'info',
+    success: 'success',
+    warning: 'warning'
 };
 
 /**
@@ -12,7 +12,7 @@ var ALERT_STYLES = {
  */
 function makeIcon(style, pluginConfig) {
     var id = pluginConfig[style];
-    return '<div class="hints-icon"><i class="'+id+'"></i></div>';
+    return '<div class="hints-icon"><i class="icon-'+style+'"></i></div>';
 }
 
 /**
@@ -27,6 +27,7 @@ module.exports = {
     book: {
         assets: './assets',
         css: [
+            'icons.css',
             'plugin-hints.css'
         ]
     },
@@ -34,14 +35,14 @@ module.exports = {
     blocks: {
         hint: {
             process: function (block) {
-                // Available styles: info, danger, tip, working
+                // Available styles: info, danger, success, warning
                 var style = block.kwargs.style || 'info';
                 var pluginConfig = this.config.get('pluginsConfig.hints');
 
                 return this
                     .renderBlock('markdown', block.body)
                     .then(function(renderedBody) {
-                        return '<div class="alert alert-'+ALERT_STYLES[style]+' hints-alert">'
+                        return '<div class="alert alert-' + ALERT_STYLES[style] + ' hints-alert">'
                             + makeIcon(style, pluginConfig)
                             + wrapInContainer(renderedBody)
                             + '</div>';
