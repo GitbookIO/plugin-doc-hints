@@ -1,9 +1,55 @@
+.alert {
+  border-left: 4px solid;
+  border-bottom: 0;
+  color: #444444;
+  overflow: auto;
+  padding-bottom: 0;
+}
+
+.alert-danger {
+  background: #fdf7f7;
+  border-color: #d9534f;
+}
+
+.alert-danger i {
+  color: #d9534f;
+}
+
+.alert-info {
+  background: #eff5ff;
+  border-color: #42acf3;
+}
+
+.alert-info i {
+  color: #42acf3;
+}
+
+.alert-success {
+  background: #f3f8f3;
+  border-color: #50af51;
+}
+
+.alert-success i {
+  color: #50af51;
+}
+
+.alert-warning {
+  background: #fcf8f2;
+  border-color: #f0ad4e;
+}
+
+.alert-warning i {
+  color: #f0ad4e;
+}
+
+i[class^="icon-"] {
+  font-size: 1.5em;
+}
+
 .hints-icon {
-    display: table-cell;
-    padding-right: 15px;
-    padding-left: 5px;
+  position: absolute;
 }
 
 .hints-container {
-    display: table-cell;
+  padding-left: 40px;
 }
